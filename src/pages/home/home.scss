@@ -1,0 +1,115 @@
+.container-body {
+    max-width: 1290px;
+    margin: 0 auto;
+    padding: 40px 0;
+
+    .card-flip {
+        width: 280px;
+        height: 320px;
+        perspective: 700px;
+        border-radius: 12px;
+    
+        .front,
+        .back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            padding: 10px;
+            border-radius: 12px;
+            transition: 700ms;
+            background-color: #333;
+        }
+    
+        .front {
+            background-color: #333;
+            z-index: 1;
+        }
+    
+        .back {
+            background-color: #333;
+            transform: rotateY(-180deg);
+            backface-visibility: hidden;
+        }
+    
+        &:hover {
+            .front {
+                transform: rotateY(180deg);
+                z-index: 0;
+            }
+    
+            .back {
+                transform: rotateY(0);
+                z-index: 1;
+            }
+        }
+    }
+
+    .lista-personagens {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+
+        .imagem-character {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #333;
+            img {
+                width: 255px;
+                height: 300px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                object-fit: cover;
+                border-radius: 12px;
+                border: 4px solid #b1a59a;
+                margin: auto;
+            }
+            .name-character {
+                position: absolute;
+                bottom: 0px;
+                background-color: #333;
+                border-radius: 12px;
+                h4 {
+                    font-family: "Cinzel Decorative", "Bahianita";
+                    font-size: 16px;
+                    font-weight: 600;
+                    background-color: #b1a59a;
+                    padding: 5px 15px;
+                    border-radius: 12px;
+                }
+            }
+        }
+    }
+
+    .infos-personagens {
+        .info {
+            height: 300px;
+            background-color: #333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            .info-p {
+                color: white;
+                font-family: "Cinzel Decorative", "Bahianita";
+                font-size: 16px;
+                font-weight: 400;
+                background-color: #333;
+                padding: 7px;
+
+                span {
+                    background-color: #333;
+                    font-weight: 600;
+                }
+            }
+            .title-name {
+                font-weight: 900;
+                color: #b1a59a;
+            }
+        }
+    }
+}
